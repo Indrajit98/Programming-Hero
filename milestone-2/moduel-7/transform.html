@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .row{
+            width: 1140px;
+            
+        }
+        .box{
+            width: 800px;
+            height: 450px;
+            border: 1px solid #333;
+            margin: 0 auto;
+        }
+        .box:hover .bat{
+            transform: rotate(-30deg);
+            transform-origin: top right ;
+        }
+        .bat{
+            transition: transform .6s ease-in;
+        }
+        .ball{
+            transition: transform .5s ease-out;
+            transition-delay: 0.6s;
+        }
+        .box:hover .ball{
+            transform: translate(800px, -100px);
+        }
+        .ball{
+            width:40px;
+            height:40px;
+            border-radius: 50%;
+            background-color: red;
+            bottom: 60px;
+            position: relative;
+            left: 285px;
+        }
+       
+       
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="box">
+            <img class="bat" src="image//New Project.png" alt="bat">
+            <div class="ball">
+
+            </div>
+            
+        </div>
+        <button>indrajit</button>
+    </div>
+    
+</body>
+</html>
