@@ -1,58 +1,135 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .row{
+        .row {
             width: 1140px;
-            
+            margin: 0 auto;
+
         }
-        .box{
+
+        .box {
             width: 800px;
             height: 450px;
             border: 1px solid #333;
             margin: 0 auto;
         }
-        .box:hover .bat{
+
+        .box:hover .bat {
             transform: rotate(-30deg);
-            transform-origin: top right ;
+            transform-origin: top right;
         }
-        .bat{
+
+        .bat {
             transition: transform .6s ease-in;
         }
-        .ball{
+
+        .ball {
             transition: transform .5s ease-out;
             transition-delay: 0.6s;
         }
-        .box:hover .ball{
+
+        .box:hover .ball {
             transform: translate(800px, -100px);
         }
-        .ball{
-            width:40px;
-            height:40px;
+
+        .ball {
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background-color: red;
             bottom: 60px;
             position: relative;
             left: 285px;
         }
-       
-       
+
+        .button {
+            width: 200px;
+            height: 40px;
+            margin: 90px;
+            font-size: 25px;
+            outline: none;
+            background-color: #00ffc8;
+            color: #fffefe;
+            transition: ease 0.3s;
+            border: none;
+
+        }
+
+        .button:hover {
+            width: 200px;
+            cursor: pointer;
+            box-shadow: inset 200px 0 0 0 #333;
+        }
+        .sun{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+            animation: sun 10s ease-in-out 0.4s infinite alternate ;
+            position: relative;
+            
+        }
+        @keyframes sun {
+            0%{
+                background-color: red;
+                left: 0; 
+                top: 0;
+                box-shadow: 1px 1px 50px red;
+
+            }
+            25%{
+                top: 320px;
+                background-color: #ffe600;
+                transform: scale(1.5 ,1.5);
+        
+            }
+            50%{
+                top: 0;
+                left:300px ;
+                background-color: red;
+                transform: scale(1 ,1);
+                box-shadow: 1px 1px 50px red;
+                
+            }
+    
+            75%{
+                top: 320px;
+                background-color: #ffe600;
+                transform: scale(1.5 ,1.5);
+            
+    
+            }
+            100%{
+               background-color: red;
+               left: 700px;
+               top: 0;
+               box-shadow: 1px 1px 50px red
+              
+            }
+            
+        }
     </style>
 </head>
+
 <body>
     <div class="row">
+
         <div class="box">
             <img class="bat" src="image//New Project.png" alt="bat">
-            <div class="ball">
-
-            </div>
-            
+            <div class="ball"></div>
         </div>
-        <button>indrajit</button>
+        <button class="button">indrajit</button>
+        <div class="box">
+            <div class="sun"></div>
+
+        </div>
     </div>
-    
+
 </body>
+
 </html>
