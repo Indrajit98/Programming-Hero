@@ -1,0 +1,168 @@
+/* Google font  */
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@500;700&display=swap");
+
+/* Basic setup  */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+.container {
+  width: 1140px;
+  margin: 0 auto;
+}
+section {
+  padding: 80px 0;
+}
+h1 {
+  font-size: 70px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: "Poppins";
+  line-height: 80px;
+}
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+h2 {
+  font-size: 40px;
+  font-weight: 600;
+}
+p {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+}
+.anchor-btn {
+  background-color: #dd0000;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  padding: 10px 30px;
+  margin-top: 20px;
+  font-weight: 400;
+  color: #f7f0ff;
+  transition: ease 0.3s;
+  border: none;
+}
+.anchor-btn:hover {
+  color: #dd0000;
+  box-shadow: inset 200px 0 0 0 #f7f0ff;
+}
+button {
+  font-size: 16px;
+  color: #161616;
+  padding: 5px 10px;
+}
+
+/* home section  start */
+.home {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  background-color: #161616;
+  padding: 20px 20px 0 20px;
+  border-radius: 15px;
+}
+.home-title {
+  margin: 10%;
+}
+.home-image img {
+  width: 100%;
+  position: relative;
+  bottom: -7px;
+}
+/* home section  end*/
+
+/* Match live section start */
+.match-live {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  column-gap: 10px;
+}
+
+.aside-box {
+  display: flex;
+  flex-direction: column;
+  background-color: #161616;
+  padding: 30px;
+  margin-right: 12px;
+}
+.aside-box a {
+  width: 210px;
+  display: inline-block;
+  font-size: 20px;
+  background: #ffff;
+  margin: 15px 5px;
+  padding: 10px 14px;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: ease 0.3s;
+  border: none;
+  color: #161616;
+  
+}
+.aside-box a:nth-child(3) {
+  background-color: #dd0000;
+  color: #ffff;
+}
+
+.article-boxs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.article-box {
+  border: 1px solid #e8e8e8;
+}
+article img {
+  width: 100%;
+}
+.blog-details {
+  padding: 20px;
+}
+.comment-count {
+  display: flex;
+}
+.comment-count i {
+  margin: 15px 20px 0 0;
+}
+.view-more {
+  display: none;
+}
+/* Match live section end */
+/* footer section start  */
+footer {
+  text-align: center;
+  height: 445px;
+  width: 100%;
+  background-color: #161616;
+  padding-top: 130px;
+  color: #f7f0ff;
+}
+footer h2 {
+  padding-bottom: 100px;
+}
+
+ul li {
+  display: inline-block;
+}
+ul li a {
+  text-decoration: none;
+  color: #b9b9b9;
+  padding-left: 25px;
+}
+.social-media{
+  margin-top: 20px;
+}
+.social-media ul li a{
+  font-size: 30px; 
+}
+/* footer section end */
