@@ -10,12 +10,12 @@
 //     number=number + 2;
 // }
 
-// var arr = [ 45, 54, 66, 87, 59, 88, 87,54, 82, 75 ];
+var arr = [ 45, 54, 66, 87, 59, 88, 87,54, 82, 75 ];
 
-// for(var i=0; i<arr.length; i++){
-//     var result = arr[i];   
-//     console.log(result)
-// }
+for(var i=0; i<arr.length; i++){
+    var result = arr[i];   
+    console.log(result)
+}
 
 // var i = 0;
 // for (i=0; i<5; i++){
@@ -40,6 +40,8 @@
 // for (i < 5; i++) {
 //   console.log(i);
 // }
+
+
 var Name = [ 'indrajit','joudip','mohon','dipto'];
 var name2 = [];
 for(var i=0; i<Name.length; i++){
