@@ -15,3 +15,10 @@ console.log(result2)
 ///////////////////////////
 const result3=Math.max(84,99,77)
 console.log(result3)
+
+let sum=0; 
+for( let i = 0; i<=3;i++){ 
+sum = sum + i; 
+}
+console.log(sum)
+
