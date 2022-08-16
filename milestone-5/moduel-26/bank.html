@@ -27,31 +27,33 @@
     <div class="grid grid-cols-3 w-9/12 mx-auto gap-4">
         <div class="bg-green-600 p-4 text-xl rounded text-white">
             <h4>Deposit</h4>
-            <h2 class="text-3xl">$00</h2>
+            <h2 class="text-3xl">$ <span id="deposit-total">00</span> </h2>
         </div>
         <div class="bg-yellow-500 p-4 text-xl rounded text-white">
             <h4>Withdraw</h4>
-            <h2 class="text-3xl">$00</h2>
+            <h2 class="text-3xl">$ <span id="withdraw-total">00</span></h2>
         </div>
         <div class="bg-violet-500 p-4 text-xl rounded text-white">
             <h4>Balance</h4>
-            <h2 class="text-3xl">$1200</h2>
+            <h2 class="text-3xl">$ <span id="balance-total">1240</span></h2>
         </div> 
     </div>
     <div class="grid grid-cols-2 w-9/12 mx-auto gap-4 mt-12" >
         <div class="bg-fuchsia-500 p-4 text-xl rounded text-white">
             <h4>Please Deposit</h4>
-            <input class="w-6/12 mb-3 p-1 mx-auto mt-4 text-black" type="text" id="deposit-input" name=""><br>
+            <input class="w-6/12 mb-3 p-1 mx-auto mt-4 text-black rounded" type="text" id="deposit-input" name=""><br>
             <button class=" bg-amber-600 w-28 mx-auto mt-3 p-2 text-white rounded text-sm" id="btn-deposit" >Deposit</button>
         </div>
         <div class="bg-indigo-500 p-4 text-xl rounded text-white">
             <h4>Please Withdraw</h4>
-            <input class="w-6/12 mb-3 p-1 mx-auto mt-4 text-black" type="text" id="withdraw-input" name=""><br>
-            <button class=" bg-amber-600 w-28 mx-auto mt-3 p-2 text-white rounded text-sm" id="btn-with-draw" >Withdraw</button>
+            <input class="w-6/12 mb-3 p-1 mx-auto mt-4 text-black rounded" type="text" id="withdraw-input" name=""><br>
+            <button class=" bg-amber-600 w-28 mx-auto mt-3 p-2 text-white rounded text-sm" id="btn-withdraw" >Withdraw</button>
         </div> 
     </div>
    </section>
 </main>
     
+<script src="js/deposit.js"></script>
+<script src="js/withdraw.js"></script>
 </body>
 </html>
