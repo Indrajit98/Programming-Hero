@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+    <header>
+        <h1 class="text-5xl text-center mt-4 font-bold">Functional <span class="text-red-500">Bank</span></h1>
+    </header>
+    <main>
+        <section>
+            <div class="grid grid-cols-3 w-3/4 mx-auto text-white mt-8 gap-8">
+                <div class="bg-yellow-400 p-8 rounded-lg">
+                    <h4 class="text-3xl ">Deposit </h4>
+                    <h2 class="text-5xl font-medium">&<span id="deposit-total">00</span></h2>
+                </div>
+                <div class="bg-red-400 p-8 rounded-lg">
+                    <h4 class="text-3xl ">Withdraw </h4>
+                    <h2 class="text-5xl font-medium">&<span id="withdraw-total">00</span></h2>
+                </div>
+                <div class="bg-blue-400 p-8 rounded-lg">
+                    <h4 class="text-3xl ">balance </h4>
+                    <h2 class="text-5xl font-medium">&<span id="balance-total">500</span></h2>
+                </div>
+            </div>
+            <div  class="grid grid-cols-2 w-3/4 mx-auto  mt-8 gap-8">
+
+               <div class=" bg-violet-400 p-8  rounded-lg">
+                <h4 class="text-3xl text-white ">Deposit </h4>
+                <input class="w-3/4 block my-4 p-2 rounded-lg" id="deposit-input" type="text">
+                <button class="bg-blue-900 py-1 rounded px-8 text-white hover:bg-blue-700" id="btn-deposit">submit</button>
+               </div>
+
+               <div class=" bg-green-400 p-8  rounded-lg">
+                <h4 class="text-3xl text-white ">Withdraw </h4>
+                <input class="w-3/4 block my-4 p-2 rounded-lg" id="withdraw-input" type="text">
+                <button class="bg-blue-900 py-1 rounded px-8 text-white hover:bg-blue-700" id="btn-withdraw">submit</button>
+               </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/utilities.js"></script>
+    <script src="js/deposit.js"></script>
+    <script src="js/withdraw.js"></script>
+
+    
+</body>
+</html>
