@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: "#da373d",
+                        btn: "rgb(249 115 22);",
+                        btn2: "rgb(194 65 12)"
+
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="w-8/12 mx-auto mt-8 border p-8">
+            <h1 class="text-center text-5xl font-semibold">Discount Calculation</h1>
+            <h4 class="text-center text-4xl font-semibold mt-5">30%</h4>
+            <div class="grid grid-cols-2 justify-items-center mt-6  ">
+                <div>
+                    <label>Enter the number</label>
+                    <input class="w-3/4 p-3 border mt-2 mr-8" type="text" id="input-field" placeholder="Enter the price number" />
+                </div>
+                <div>
+                    <label>Enter the Promo Code "DOM"</label>
+                    <input class="w-3/4 p-3 border mt-2" type="text" id="input-promo"placeholder="Enter the promo code DOM" />
+                </div>
+            </div>
+            <button class="border py-2 px-4 bg-btn flex mx-auto mt-8 rounded" disabled id="btn-discount">Apply</button>
+            <h4 class="text-center text-4xl font-semibold mt-5 hidden" id="price">00</h4>
+        </div>
+    </header>
+
+    <script src="discount.js"></script>
+</body>
+
+</html>
