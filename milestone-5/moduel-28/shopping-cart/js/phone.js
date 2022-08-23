@@ -7,14 +7,12 @@ document.getElementById('btn-phone-plus').addEventListener('click', function () 
 
 })
 
-
-
 document.getElementById('btn-phone-minus').addEventListener('click', function () {
 
     const newCaseNumber = updatePhoneNumber(false);
 
     updatePhoneTotalPrice(newCaseNumber);
-    
+
     CalculateSubTotal()
 
 })

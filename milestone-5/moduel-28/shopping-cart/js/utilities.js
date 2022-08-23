@@ -57,7 +57,6 @@ function setTextElementValueId(elementId, value) {
     subTotalElement.innerText = value;
 }
 
-
 function CalculateSubTotal() {
     // calculate total 
 
@@ -66,8 +65,7 @@ function CalculateSubTotal() {
     const currentSubtotal = currentPhoneTotal + currentCaseTotal;
 
     setTextElementValueId('sub-total', currentSubtotal);
-
-
+    
     // calculate tax 
     const taxAmount = currentSubtotal * 0.1;
     setTextElementValueId('tax-amount', taxAmount)
