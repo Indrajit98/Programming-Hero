@@ -39,6 +39,7 @@ const displayPhones = (phones,dataLimit) => {
                             <h5 class="card-title">${phone_name}</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in
                                 to additional content. This content is a little bit longer.</p>
+                                <button onclick = "loadPhoneDetails('${phone.slug}')"" href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#phoneDetailModal">Go somewhere</button>
                         </div>
                     </div>
                 </div>
@@ -63,6 +64,14 @@ document.getElementById('btn-search').addEventListener('click', function(){
     processSearch(10)
 })
 
+//search input field enter key handler
+document.getElementById('search-field').addEventListener('keypress', function(e){
+    if(e.key ==='Enter'){
+        processSearch(10)
+    }
+})
+
+
 const toggleSpinner = isLoading =>{
     const loaderSection = document.getElementById('loader');
    if(isLoading){
@@ -78,4 +87,43 @@ document.getElementById('btn-show-all').addEventListener('click', function() {
 
 })
 
-// loadPhones();
+const loadPhoneDetails = async id => {
+    const url = `https://openapi.programming-hero.com/api/phone/${id}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    displayPhoneDetails(data.data)
+
+}
+const displayPhoneDetails = phone =>{
+    console.log(phone)
+
+    const modalTitle = document.getElementById('phoneDetailModal');
+    modalTitle.innerHTML = ''
+
+    // modalTitle.innerText = `${phone.name}`
+    const modalDiv = document.createElement('div');
+        modalDiv.classList.add('col');
+        modalDiv.innerHTML = `
+        <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+           <div> <h5 class="modal-title d-block" id="phoneDetailModalLabel">${phone.name}</h5></div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div> <img src="${phone.image}" class="card-img-top h-25" alt="..."></div>
+          <div class="modal-body">
+            <P>${phone.releaseDate}</P>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+        
+        `
+        modalTitle.appendChild(modalDiv);
+
+}
+
+
+loadPhones('apple');
