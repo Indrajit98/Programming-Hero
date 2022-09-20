@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+.person{
+  border: 1px solid saddlebrown;
+  padding: 5px;
+  width: 50%;
+  margin: auto;
+  margin-top: 10px;
+
+}
