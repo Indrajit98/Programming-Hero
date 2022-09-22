@@ -13,19 +13,23 @@ const Countries = () => {
  },[])
 
     return (
-        <div className='countries'>
+        <div>
+            <h2>Total countries: {countries.length}</h2>
            
-          {
+         <div className='countries'>
+         {
             countries.map(country =>  <Country 
-                country = {country}>
-                    console.log(country.name)
-
+                country = {country}
+                key = {country.cca3}
+                >
                 </Country>)
           }
+         </div>
             
         </div>
     );
 };
+
 
 
 
