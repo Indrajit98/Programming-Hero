@@ -1,5 +1,6 @@
 import React from 'react';
 import Cosmetic from '../Cosmetic/Cosmetic';
+import './Cosmetics.css'
 
 
 
@@ -45,9 +46,11 @@ const comestics = [
     return (
         <div>
             <h1>welcome to my Cosmetics store</h1>
-            {
+           <div className='cosmetics'>
+           {
                comestics.map(cosmetic => <Cosmetic cosmetic = {cosmetic}  key={cosmetic._id} ></Cosmetic> )
             }
+           </div>
             
         </div>
     );
