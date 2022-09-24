@@ -8,5 +8,6 @@
     align-items: center;
 }
 .btn{
-    width: 50%;
+    width: 40%;
+    margin: 5px;
 }
