@@ -11,7 +11,7 @@ const Product = (props) => {
 
     return (
         <div className='product'>
-            <img src={img} alt="noImage" />
+            <img src={img} alt="noImage" onError={(e) => { e.currentTarget.src='https://via.placeholder.com/600/771796'} } />
             <div className='product-info'>
             <p className='product-name'>{name}</p>
             <p>Price: {price}</p>
