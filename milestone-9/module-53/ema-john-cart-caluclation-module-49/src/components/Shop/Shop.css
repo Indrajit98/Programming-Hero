@@ -11,6 +11,10 @@
 .cart-container{
     background-color: rgba(255, 153, 0, 0.3);
 }
+.status{
+    display: flex;
+    justify-content: center;
+}
 @media screen and (max-width:1100px) {
     .products-container{
         grid-template-columns: repeat(2, 1fr);
