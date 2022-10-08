@@ -1,40 +1,42 @@
 import './App.css';
-import {createBrowserRouter, RouterProvider} from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Main from './layout/Main'
-import Order from './components/Orders/Order';
+import Orders from './components/Orders/Orders';
 import Shop from './components/Shop/Shop';
 import Inventory from './components/Inventory/Inventory';
 import About from './components/About/About';
+import { productsAndCartLoader } from './loaders/productsAndCartLoaders';
 
 function App() {
 
   const router = createBrowserRouter([
     {
       path: '/', element: <Main></Main>,
-      children:[
-       {
-        path: '/',element: <Shop></Shop>
-       },
-       {
-        path: '/orders',
-        loader:  () => {
-          return fetch('products.json')
-
+      children: [
+        {
+          path: '/',
+          loader: () => {
+            return fetch('products.json')
+          },
+          element: <Shop></Shop>
         },
-        element:<Order></Order>,
-       },
-       {
-        path: '/inventory',element:<Inventory></Inventory>
-       },
-       {
-        path: '/about',element:<About></About>
-       }
+        {
+          path: '/orders',
+          loader: productsAndCartLoader,
+          element: <Orders></Orders>,
+        },
+        {
+          path: '/inventory', element: <Inventory></Inventory>
+        },
+        {
+          path: '/about', element: <About></About>
+        }
 
       ]
     },
 
     {
-      path: 'order', element: <Order></Order>
+      path: 'order', element: <Orders></Orders>
     }
 
 
@@ -43,8 +45,8 @@ function App() {
 
   return (
     <div>
-       <RouterProvider router={router} />
-      
+      <RouterProvider router={router} />
+
     </div>
   );
 }
