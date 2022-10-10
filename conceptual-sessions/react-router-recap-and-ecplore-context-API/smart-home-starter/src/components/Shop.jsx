@@ -9,7 +9,7 @@ const Shop = () => {
 const products = useContext(ProductContext)
 
 const [cart ,setCart] = useContext(CartContext)
-console.log(cart)
+// console.log(cart)
 // const {name,} = products;
 
 const handleAddToCart = (product) =>{
@@ -29,7 +29,7 @@ const handleAddToCart = (product) =>{
   }
   setCart(newCart)
   addToDb(product.id)
-  toast.success('product addted',{autoClose: 500})
+  toast.success('product added',{autoClose: 5000})
 
 
 
