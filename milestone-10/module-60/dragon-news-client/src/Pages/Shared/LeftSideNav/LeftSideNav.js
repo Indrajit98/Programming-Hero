@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+
 const LeftSideNav = () => {
     const [ categories,setCategories] = useState([])
-
-    // console.log(categories)
-
     useEffect(() =>{
         fetch('https://dragon-news-server-bice.vercel.app/news-categories')
         .then(res => res.json())
