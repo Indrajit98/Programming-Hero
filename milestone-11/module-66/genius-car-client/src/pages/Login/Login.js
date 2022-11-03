@@ -10,16 +10,17 @@ const Login = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
+        console.log(email,password)
 
         login(email,password)
         .then(res => {
             const user = res.user;
             console.log(user);
+
         })
-        .catch(err=> console.error(err))
+        .then(err=> console.error(err))
 
     }
-
 
     return (
         <div>
@@ -42,7 +43,7 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="text" name='password' placeholder="password" className="input input-bordered" required />
+                                <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
