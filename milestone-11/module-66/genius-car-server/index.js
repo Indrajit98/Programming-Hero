@@ -1,7 +1,11 @@
 const express = require('express');
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const cors = require('cors');
+const jwt =require ('jsonwebtoken')
 require('dotenv').config();
+
+
+
 const app  =express();
 const port = process.env.PORT || 5000;
 
@@ -12,6 +16,23 @@ app.use(express.json());
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.qloaa9d.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 // console.log(uri)
+
+function verifyJWT (req,res,next){
+    // console.log(req.headers.authorization)
+    const authHeader = req.headers.authorization;
+    if(!authHeader){
+        res.status(401).send({message: 'Unauthorized Access'})
+    }
+    const token = authHeader.split(' ')[1];
+    jwt.verify(token,process.env.ACCESS_TOKEN_SECRET, function(err,decoded){
+        if(err){
+            res.status(401).send({message: 'Forbidden Access'})
+        }
+        req.decoded = decoded;
+        next();
+    })
+}
+
 async function run(){
     try{
         const serviceCollection = client.db('geniusCar').collection('services');
@@ -34,8 +55,15 @@ async function run(){
 
         })
         // orders api 
-        app.get('/orders', async (req,res) =>{
-            console.log(req.query.email)
+        app.get('/orders', verifyJWT, async (req,res) =>{
+            const decoded = req.decoded;
+            // console.log('inside orders api', decoded)
+            if(decoded.email !== req.query.email){
+                res.status(403).send({message: 'Unauthorized Access'})
+            }
+
+            // console.log(req.headers.authorization)
+
             let query = {};
             if(req.query.email){
                 query ={
@@ -48,13 +76,13 @@ async function run(){
             res.send(orders)
         })
 
-        app.post('/orders', async (req,res) =>{
+        app.post('/orders', verifyJWT, async (req,res) =>{
             const order = req.body;
             const result = await orderCollection.insertOne(order)
             res.send(result)
 
         })
-        app.patch('/orders/:id',async (req,res)=>{
+        app.patch('/orders/:id',verifyJWT, async (req,res)=>{
             const id = req.params.id;
             const status = req.body.status;
             const query = {_id: ObjectId(id)}
@@ -69,11 +97,19 @@ async function run(){
 
         })
 
-        app.delete('/orders/:id', async (req,res) => {
+        app.delete('/orders/:id', verifyJWT, async (req,res) => {
             const id = req.params.id;
             const query = {_id: ObjectId(id)}
             const result = await orderCollection.deleteOne(query)
             res.send(result)
+
+        })
+
+        app.post('/jwt', (req,res)=>{
+            const user = req.body;
+            // console.log(user)
+            const token = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET,{expiresIn: '1d'})
+            res.send({token})
 
         })
 

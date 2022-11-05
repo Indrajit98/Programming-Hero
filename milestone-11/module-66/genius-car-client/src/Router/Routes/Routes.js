@@ -5,6 +5,7 @@ import Home from '../../pages/Home/Home';
 import Login from '../../pages/Login/Login';
 import Orders from '../../pages/Orders/Orders';
 import SignUp from '../../pages/SignUp/SignUp';
+import PrivateRoute from '../PrivateRoute/PrivateRoute';
 
 
 export const routes = createBrowserRouter([
@@ -24,12 +25,12 @@ export const routes = createBrowserRouter([
 
         },
         {
-            path:'/checkout/:id',element:<CheckOut></CheckOut>,
-            loader:({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+            path:'/checkout/:id',element:<PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
+            loader:({params}) => fetch(`https://genius-car-server-sand-pi.vercel.app/services/${params.id}`)
 
         },
         {
-            path:'/orders',element:<Orders></Orders>
+            path:'/orders',element:<PrivateRoute><Orders></Orders></PrivateRoute>
            
 
         },
