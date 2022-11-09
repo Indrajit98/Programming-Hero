@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logInImage from '../../assets/images/login/login.svg'
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 const Login = () => {
 
@@ -43,7 +44,7 @@ const Login = () => {
 
                     })
 
-                console.log(currentUser);
+                // console.log(currentUser);
 
             })
             .catch(err => console.error(err))
@@ -81,6 +82,7 @@ const Login = () => {
                             </div>
                         </form>
                         <p className='text-center'>New to Genius Car <Link className='text-orange-600 font-bold' to='/signup'>Sign UP</Link></p>
+                        <SocialLogin></SocialLogin>
                     </div>
                 </div>
             </div>
