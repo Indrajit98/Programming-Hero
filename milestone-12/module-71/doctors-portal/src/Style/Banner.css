@@ -1,5 +1,5 @@
 .bg-image{
-    background:linear-gradient( rgba(245, 245, 245, 0.89),rgba(215, 226, 224, 0.774)), url('../assets/images/chair.png');   
+    background:linear-gradient( rgba(245, 245, 245, 0.952),rgba(215, 226, 224, 0.856)), url('../assets/images/chair.png');   
     background-repeat: no-repeat;
     object-fit: cover;
     background-size: cover;  
