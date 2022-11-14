@@ -1,0 +1,16 @@
+.bg-image{
+    background:linear-gradient( rgba(245, 245, 245, 0.89),rgba(215, 226, 224, 0.774)), url('../assets/images/chair.png');   
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-size: cover;  
+    position: relative;      
+}
+.bg-appointment{
+    background: url('../assets/images/appointment.png');
+}
+.bg-footer{
+    background: url('../assets/images/footer.png');
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-size: cover; 
+}
