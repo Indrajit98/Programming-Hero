@@ -19,7 +19,7 @@ const SignUp = () => {
   const [createUserEmail, setCreateUserEmail] = useState('')
   const [token] = useToken(createUserEmail)
 
-  if(token){
+  if (token) {
     navigate('/')
   }
 
@@ -65,7 +65,8 @@ const SignUp = () => {
 
 
   const handleGoogleSignIn = () => {
-    googleSignIn(googleProvider).then((res) => {
+    googleSignIn(googleProvider)
+    .then((res) => {
       const user = res.user;
       toast.success("User Created Successfully");
       console.log(user);
