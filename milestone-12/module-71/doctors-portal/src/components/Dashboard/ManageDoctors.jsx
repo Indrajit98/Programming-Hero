@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 import ConfirmationModal from '../Shared/ConfirmationModal';
 
 const ManageDoctors = () => {
-    const [ deletingDoctor,setDeletingDoctor] = useState(null)
+    const [ deletingDoctor,setDeletingDoctor]=useState(null)
 
     const closeModal = () => {
         setDeletingDoctor(null)

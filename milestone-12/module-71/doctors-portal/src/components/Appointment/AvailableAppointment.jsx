@@ -43,6 +43,8 @@ const AvailableAppointment = ({ selectedDate }) => {
                                     <h2 className="card-title text-secondary justify-center text-2xl font-semibold">{option.name}</h2>
                                     <p>{option.slots.length > 0 ? option?.slots[0] : 'Try Another day'}</p>
                                     <p>{option.slots.length} {option.slots > 1 ? 'spaces' : 'space'} available</p>
+                                    <p>Price: ${option.price}</p>
+
                                     <label onClick={() => setTreatment(option)} disabled={option.slots.length === 0} htmlFor="booking-modal" className="btn btn-primary bg-gradient-to-r from-primary to-secondary text-white md:w-1/2 mx-auto mt-4">Book Appointment</label>
                                 </div>
                             </div>

@@ -43,7 +43,7 @@ const AddDoctor = () => {
                     method: 'POST',
                     headers:{
                         'content-type': 'application/json',
-                        authorization: `bearer${localStorage.getItem('access_token')}`
+                        authorization: `bearer ${localStorage.getItem('access_token')}`
 
                     },
                     body: JSON.stringify(doctor)
